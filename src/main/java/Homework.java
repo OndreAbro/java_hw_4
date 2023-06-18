@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -31,30 +33,44 @@ public class Homework {
 
     public static void main(String[] args) {
 
-        Stack<String> stack = new Stack<String>();
+//        Stack<String> stack = new Stack<String>();
+//        for (; ; ) {
+//            Scanner in = new Scanner(System.in);
+//            System.out.print("> ");
+//            String input = in.nextLine();
+//            if (input.equals("print")) {
+//                Stack<String> stackPrint = new Stack<String>();
+//                int size = stack.size();
+//                for (int i = 0; i < size; i++) {
+//                    stackPrint.push(stack.pop());
+//                }
+//                System.out.println(stackPrint);
+//                for (int i = 0; i < size; i++) {
+//                    stack.push(stackPrint.pop());
+//                }
+//            } else if (input.equals("revert")) {
+//                stack.pop();
+//            } else if (input.equals("exit")) {
+//                break;
+//            } else {
+//                stack.push(input);
+//            }
+//        }
+
+        Deque<String> deque = new ArrayDeque<String>();
         for (; ; ) {
             Scanner in = new Scanner(System.in);
             System.out.print("> ");
             String input = in.nextLine();
             if (input.equals("print")) {
-                Stack<String> stackPrint = new Stack<String>();
-                int size = stack.size();
-                for (int i = 0; i < size; i++) {
-                    stackPrint.push(stack.pop());
-                }
-                System.out.println(stackPrint);
-                for (int i = 0; i < size; i++) {
-                    stack.push(stackPrint.pop());
-                }
+                System.out.println(deque);
             } else if (input.equals("revert")) {
-                stack.pop();
+                deque.pop();
             } else if (input.equals("exit")) {
                 break;
             } else {
-                stack.push(input);
+                deque.push(input);
             }
         }
     }
-
-
 }
